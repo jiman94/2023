@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+ server-a:
+  build: ./server-a
+  ports:
+   - "8443"
+  tty:
+    true
+  restart:
+    unless-stopped
+
+ server-b:
+  build: ./server-b
+  ports:
+   - "8443"
+  tty:
+    true
+  restart:
+    unless-stopped
+
+ client-c:
+  build: ./client-c
+  ports:
+   - "8080:8080"
+  tty:
+    true
+  restart:
+    unless-stopped
+    
