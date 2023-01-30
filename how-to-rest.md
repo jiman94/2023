@@ -1,4 +1,5 @@
 
+```java
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -28,13 +29,17 @@ public class RestTemplateConfig {
 
 }
 
+```
+
+
+```java
 
 import org.springframework.web.client.RestTemplate;
 
 @Autowired
 private RestTemplate restTemplate;
 
-...
+
 
 List<String> urls = Arrays.asList("http://example.com/api/1", "http://example.com/api/2", "http://example.com/api/3");
 for (String url : urls) {
@@ -43,3 +48,13 @@ for (String url : urls) {
   // do something with the response
 }
 
+
+
+	  List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
+ 
+		MappingJackson2HttpMessageConverter map = new MappingJackson2HttpMessageConverter();
+		MappingJackson2XmlHttpMessageConverter xml = new MappingJackson2XmlHttpMessageConverter();
+		messageConverters.add(map);
+		messageConverters.add(xml);
+		restTemplate.setMessageConverters(messageConverters);
+```    
