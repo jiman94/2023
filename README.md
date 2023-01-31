@@ -12,4 +12,11 @@ https://github.com/utpal-barman/uShop-flutter-ecommerce-shop
 https://github.com/spring-petclinic/spring-petclinic-graphql
 
 #### Sagemaker 
+
 https://www.youtube.com/watch?v=6sdr6dViK2U&t=11s
+
+https://github.com/aws/amazon-sagemaker-examples/tree/main/autopilot
+
+https://www.youtube.com/watch?v=kn2DBjZW5W8
+
+https://github.com/pytorch/text/fork
