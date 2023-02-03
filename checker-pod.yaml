@@ -1,0 +1,106 @@
+
+# Namespace 가 다른 pod 통신 테스트
+
+```s
+kubectl exec -it test-client --namespace=pilot-service -- ping <{service_name}.{namespace_name}.svc.cluster.local:{service_port}/{API 주소}>
+```
+
+# Domain: 서비스이름.네임스페이스이름.svc.cluster.local 으로 구성한다.
+# "{service_name}.{namespace_name}.svc.cluster.local:{service_port}/{API 주소}"
+
+# 실행 
+```
+curl -X GET "api-product-service.chicor-service.svc.cluster.local:8080/product/v1/htalth/check"
+```
+# 결과 
+```
+{"data":"OK","resultMessage":null}
+```
+
+```shell
+#!/bin/bash
+kubectl run -it --rm --image=curlimages/curl test -- sh
+while :; do curl api-product-service.chicor-service.svc.cluster.local:8080/product/v1/htalth/check; echo -e ''; sleep 1; done
+```
+
+# test-deployment.yaml  
+
+```yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-test-client2
+spec:
+  restartPolicy: Never
+  containers:
+  - name: test-client2
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "curl -v api-product-service.chicor-service.svc.cluster.local:8080/product/v1/htalth/check"]
+```
+
+test-deployment.yaml  
+
+
+kubectl apply -f test-deployment.yaml  
+kubectl get pods 
+kubectl logs service-test-client2  
+
+
+
+#
+```service
+service/api-product-service       NodePort   172.20.245.133   <none>        8080:30963/TCP   485d
+```
+
+# 
+```deployment
+deployment.apps/api-product-deployment       4/4     4            4           485d
+```
+
+
+#### k8s cronjob
+
+```
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pod-checker-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: pod-checker-cronjob
+              image: curlimages/curl:7.77.0
+              imagePullPolicy: IfNotPresent
+              command:
+                - "/bin/sh"
+                - "-c"
+                - |
+                  curl -X "POST" "somehost" \
+                       -H 'header-key: value' \
+                       -H 'Content-Type: application/json; charset=utf-8'                  
+          restartPolicy: Never
+```          
+
+
+```
+        while : ;
+        do
+            curl -X GET  "api-product-service.chicor-service.svc.cluster.local:8080/product/v1/htalth/check"
+        done
+```
+
+
+kubectl run nginx --image=nginx --namespace apps
+
+kubectl get po -n apps -owide
+
+## To get the dns record of the nginx Pod from the default namespace
+kubectl run -it test --image=busybox:1.28 --rm --restart=Never -- nslookup api-product-service.chicor-service.svc.cluster.local
+
+## Accessing with curl command
+kubectl run -it nginx-test --image=nginx --rm --restart=Never -- curl -Is api-product-service.chicor-service.svc.cluster.local:8080/product/v1/htalth/check
