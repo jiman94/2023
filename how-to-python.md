@@ -24,7 +24,11 @@ def root():
 #### 3) 서버 생성
 
 ```shell 
+
 uvicorn main:app --reload
+
+uvicorn main:app --port 8080 --workers 3
+
 ```
 
 - main : 모듈명
