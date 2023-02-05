@@ -1,0 +1,2 @@
+# Erlang is a general-purpose, concurrent, functional programming language and runtime system. It was developed by Ericsson in the 1980s and is used in telecommunication and other industries for building large-scale, fault-tolerant systems. Erlang is known for its hot-swapping (the ability to upgrade a running system without downtime), high availability, and scalability. The language has a unique syntax and features built-in support for concurrency and distribution, making it a popular choice for building high-performance, real-time systems.
+
