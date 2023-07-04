@@ -3,6 +3,11 @@
 #### eks-charts
 https://github.com/aws/eks-charts/
 
+
+#### MWAA
+https://catalog.workshops.aws/aws-data-ingestion-pipeline/ko-KR
+
+
 #### flutter 
 
 https://github.com/abuanwar072
@@ -13,6 +18,8 @@ https://github.com/utpal-barman/uShop-flutter-ecommerce-shop
 #### graphql
 
 https://github.com/spring-petclinic/spring-petclinic-graphql
+
+
 
 #### Sagemaker 
 
