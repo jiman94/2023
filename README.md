@@ -9,6 +9,7 @@ https://github.com/aws/eks-charts/
 
 https://github.com/nirgeier/TerraformLabs/tree/main
 https://github.com/nirgeier/KubernetesLabs
+https://github.com/nirgeier/AnsibleLabs/tree/main
 
 #### MWAA
 https://catalog.workshops.aws/aws-data-ingestion-pipeline/ko-KR
