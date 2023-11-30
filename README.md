@@ -7,6 +7,8 @@ Steeleye
 #### eks-charts
 https://github.com/aws/eks-charts/
 
+https://github.com/nirgeier/TerraformLabs/tree/main
+https://github.com/nirgeier/KubernetesLabs
 
 #### MWAA
 https://catalog.workshops.aws/aws-data-ingestion-pipeline/ko-KR
