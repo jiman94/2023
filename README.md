@@ -11,6 +11,8 @@ https://github.com/nirgeier/TerraformLabs/tree/main
 https://github.com/nirgeier/KubernetesLabs
 https://github.com/nirgeier/AnsibleLabs/tree/main
 
+https://github.com/microsoft/ML-For-Beginners/tree/main/1-Introduction/2-history-of-ML
+
 #### MWAA
 https://catalog.workshops.aws/aws-data-ingestion-pipeline/ko-KR
 
