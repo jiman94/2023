@@ -4,6 +4,11 @@
 Steeleye
 
 
+#### chaos-engineering
+
+https://docs.aws.amazon.com/ko_kr/wellarchitected/latest/framework/rel_testing_resiliency_failure_injection_resiliency.html
+
+
 #### eks-charts
 https://github.com/aws/eks-charts/
 
