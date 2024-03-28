@@ -11,6 +11,10 @@ Steeleye
 
 따라서 클린 아키텍처는 시스템 내부의 구조와 의존성을 중심으로 하고, 헥사고날 아키텍처는 시스템과 외부 환경 간의 상호 작용을 중심으로 합니다
 
+#### hexagonal-architecture
+
+https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture-java/
+
 
 #### pnpm
 https://pnpm.io/ko/installation
